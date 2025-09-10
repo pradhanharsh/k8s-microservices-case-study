@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: microserviceb
+  labels:
+    app: microserviceb
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: microserviceb
+  template:
+    metadata:
+      labels:
+        app: microserviceb
+    spec:
+      containers:
+        - name: microserviceb
+          image: <your-dockerhub-username>/microserviceb:latest
+          ports:
+            - containerPort: 8081   # ✅ must match app logs

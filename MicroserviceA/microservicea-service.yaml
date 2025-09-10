@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: microservicea-service
+spec:
+  selector:
+    app: microservicea
+  ports:
+    - protocol: TCP
+      port: 8080
+      targetPort: 8080
+  type: NodePort
